@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Research Assistant</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    textarea { width: 100%; height: 100px; }
+    button { padding: 10px; margin-top: 10px; }
+    pre { background: #f4f4f4; padding: 15px; }
+  </style>
+</head>
+<body>
+
+<h2>Self-Correcting AI Research System</h2>
+
+<textarea id="topic" placeholder="Enter a topic..."></textarea><br>
+<button onclick="run()">Generate Report</button>
+
+<h3>Output:</h3>
+<pre id="output"></pre>
+
+<script>
+async function run() {
+  const topic = document.getElementById("topic").value;
+
+  const formData = new FormData();
+  formData.append("topic", topic);
+
+  const res = await fetch("http://127.0.0.1:8000/run", {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await res.json();
+  document.getElementById("output").innerText = data.final_report;
+}
+</script>
+
+</body>
+</html>

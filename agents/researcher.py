@@ -38,4 +38,8 @@ def researcher(state):
 
     draft = llm.invoke(prompt)
 
-    return {"draft": draft}
+    return {
+    "draft": draft,
+    "revisions": state.get("revisions", 0) + 1
+}
+

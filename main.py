@@ -5,5 +5,8 @@ if __name__ == "__main__":
         "topic": "How AI agents are used in software engineering"
     })
 
+    print("\n===== RAW RESULT =====\n")
+    print(result)
+
     print("\n===== FINAL REPORT =====\n")
-    print(result["final_report"])
+    print(result.get("final_report", "No final report generated"))

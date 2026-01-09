@@ -12,8 +12,8 @@ def critic(state):
     draft = state.get("draft", "")
 
     prompt = f"""
-    Briefly point out any factual issues (if any).
-    Do NOT ask for revisions.
+    Point out 1–2 major factual or logical issues (if any).
+    If none, say "No major issues found."
 
     Report:
     {draft[:1000]}
