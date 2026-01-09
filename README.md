@@ -150,12 +150,3 @@ frontend/index.html
 
 ---
 
-
-
-## ✍️ Author
-
-**Manasvi**
-AI & Software Engineering Enthusiast
-
----
-
